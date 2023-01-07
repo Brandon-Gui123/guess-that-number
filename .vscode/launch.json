@@ -10,18 +10,13 @@
             "justMyCode": true
         },
         {
-            // Use IntelliSense to find out which attributes exist for C# debugging
-            // Use hover for the description of the existing attributes
-            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/CSharp/bin/Debug/net7.0/GuessThatNumber.dll",
             "args": [],
             "cwd": "${workspaceFolder}/CSharp",
-            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "integratedTerminal",
             "stopAtEntry": false
         },
@@ -29,6 +24,32 @@
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
+        },
+        {
+            "name": "C/C++: g++ build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/build/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ build active file",
+            "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
 }
